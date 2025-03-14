@@ -1,0 +1,109 @@
+.cart-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Cart Table */
+  .cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  th {
+    background: #f4f4f4;
+  }
+  
+  img {
+    width: 50px;
+    border-radius: 5px;
+  }
+  
+  input {
+    width: 400px;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  /* Remove Button */
+  .btn-remove {
+    background: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .btn-remove:hover {
+    background: #c82333;
+  }
+  
+  /* Coupon Section */
+  .cart-coupon {
+    margin: 20px 0;
+  }
+  
+  .cart-coupon input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .cart-coupon button {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  
+  .cart-coupon button:hover {
+    background: #0056b3;
+  }
+  
+  /* Order Summary */
+  .cart-summary {
+    background: #f8f9fa;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: left;
+  }
+  
+  .cart-summary p {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+  
+  .btn-checkout {
+    background: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .btn-checkout:hover {
+    background: #218838;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .cart-table {
+      font-size: 14px;
+    }
+  }
+  

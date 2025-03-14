@@ -1,0 +1,71 @@
+.custorder-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Order Table */
+  .order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  th {
+    background: #f4f4f4;
+  }
+  
+  .pending {
+    color: orange;
+    font-weight: bold;
+  }
+  
+  .shipped {
+    color: blue;
+    font-weight: bold;
+  }
+  
+  .delivered {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .cancelled {
+    color: red;
+    font-weight: bold;
+  }
+  
+  /* Cancel Button */
+  .btn-cancel {
+    background: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .btn-cancel:hover {
+    background: #c82333;
+  }
+  
+  /* Disabled Action */
+  .disabled-action {
+    color: gray;
+    font-style: italic;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .order-table {
+      font-size: 14px;
+    }
+  }
+  

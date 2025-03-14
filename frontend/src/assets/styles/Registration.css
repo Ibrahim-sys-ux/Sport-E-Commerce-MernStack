@@ -1,0 +1,42 @@
+.register-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 400px !important;
+  }
+  
+  button {
+    background: #ff6600;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background: #cc5500;
+  }
+  
+  .message {
+    color: green;
+  }
+  
+  p a {
+    color: #ff6600;
+    text-decoration: none;
+  }
+  
