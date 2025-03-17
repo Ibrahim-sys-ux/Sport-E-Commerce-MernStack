@@ -1,42 +1,120 @@
 .product-card {
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  height: 320px; /* Adjusted height */
+  display: flex;
+  align-items: flex-end; /* Content stays at the bottom */
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #1a1a1a, #333333); /* Elegant dark background */
+}
+
+/* 🖼️ Ensure Image Covers the Entire Card */
+.product-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures full visibility without distortion */
+  transition: transform 0.3s ease;
+}
+
+/* 🔥 Smooth Gradient Overlay for Better Contrast */
+.product-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)); /* Gradient effect */
+  transition: background 0.3s ease-in-out;
+}
+
+/* Hover Effects */
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.6);
+}
+
+.product-card:hover img {
+  transform: scale(1.1); /* Slight zoom-in on hover */
+}
+
+.product-card:hover::before {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)); /* Slightly darker overlay */
+}
+
+/* 🔹 Glassmorphism Effect for Content */
+.product-info {
+  position: relative;
+  z-index: 2;
+  padding: 15px;
+  width: 100%;
+  backdrop-filter: blur(5px); /* Stronger blur for glass effect */
+  background: rgba(0, 0, 0, 0.35); /* Dark transparent background */
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ✨ Text Styling */
+.product-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.product-price {
+  font-size: 1.3rem;
+  color: #ffcc00;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* 🔥 Button with Neon Glow */
+.btn-view {
+  display: inline-block;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #ffcc00, #ff9900);
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 0px 10px rgba(255, 153, 0, 0.4);
+}
+
+.btn-view:hover {
+  background: linear-gradient(135deg, #ff9900, #ff6600);
+  transform: scale(1.1);
+  box-shadow: 0px 0px 15px rgba(255, 102, 0, 0.7);
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 768px) {
+  .product-card {
+    height: 280px;
   }
-  
-  .product-card:hover {
-    transform: scale(1.05);
+
+  .product-info {
+    padding: 10px;
   }
-  
-  .product-image {
-    width: 100%;
-    max-height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-  
+
   .product-name {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 10px 0;
+    font-size: 1.3rem;
   }
-  
+
   .product-price {
-    font-size: 14px;
-    color: #ff6600;
-    font-weight: bold;
+    font-size: 1.1rem;
   }
-  
+
   .btn-view {
-    display: inline-block;
-    background: #ff6600;
-    color: white;
-    padding: 8px 12px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
+    padding: 8px 15px;
   }
-  
+}

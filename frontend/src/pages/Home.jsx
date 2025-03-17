@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { Carousel, Container, Row, Col } from "react-bootstrap"; // Bootstrap Components
 import ProductCard from "../components/HProductCard";
-import "../assets/styles/Home.css";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import API_BASE_URL from "../api/config.js";
+import "../assets/styles/Home.css";
+import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -22,52 +24,56 @@ const Home = () => {
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
 
+  // 🔹 Split products into groups of 3 for the carousel
+  const groupedProducts = [];
+  for (let i = 0; i < products.length; i += 3) {
+    groupedProducts.push(products.slice(i, i + 3));
+  }
+
   return (
     <>
       <Navbar />
-      <div className="home-container">
-        {/* 🔥 Hero Section */}
-        <section className="hero">
-          <div className="hero-overlay">
-            <h1>Gear Up for Your Next Adventure</h1>
-            <p>Explore top-quality sports & outdoor gear at unbeatable prices.</p>
-            <Link to="/shop" className="btn-primary">Shop Now</Link>
-          </div>
-        </section>
 
-        {/* 🏷️ Categories */}
-        <section className="categories">
-          <h2>Shop by Category</h2>
-          <div className="category-grid">
-            <Link to="/category/camping" className="category-card">🏕️ Camping</Link>
-            <Link to="/category/fitness" className="category-card">🏋️‍♂️ Fitness</Link>
-            <Link to="/category/cycling" className="category-card">🚴 Cycling</Link>
-            <Link to="/category/hiking" className="category-card">🥾 Hiking</Link>
-          </div>
-        </section>
+      {/* 🔥 Hero Section - Bootstrap Carousel */}
+      <Carousel className="hero-carousel">
+        <Carousel.Item>
+          <img className="d-block w-100" src="/images/hero-banner.webp" alt="First slide" />
+          <Carousel.Caption>
+            <h1>NIKE AIR ZOOM PEGASUS 37</h1>
+            <p>A beautiful blend of design and technology in every step of your running.</p>
+            <Link to="/shop" className="btn btn-dark">Shop Now</Link>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src="/images/hero-banner2.webp" alt="Second slide" />
+          <Carousel.Caption>
+            <h1>Explore the Latest Collection</h1>
+            <p>Get the best running and outdoor gear today.</p>
+            <Link to="/shop" className="btn btn-dark">Shop Now</Link>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
 
-        {/* ⭐ Featured Products */}
-        <section className="featured">
-          <h2>Featured Products</h2>
-          <div className="product-grid">
-            {products.length > 0 ? (
-              products.map((product) => <ProductCard key={product._id} product={product} />)
-            ) : (
-              <p>Loading products...</p>
-            )}
-          </div>
-        </section>
+      {/* 🏷️ Trending Products Section */}
+      <section className="trending my-5">
+        <Container>
+          <h2 className="text-center mb-4">What's Trending</h2>
+          <Carousel indicators={false} controls={true} interval={3000}>
+            {groupedProducts.map((group, index) => (
+              <Carousel.Item key={index}>
+                <Row className="justify-content-center">
+                  {group.map((product) => (
+                    <Col key={product._id} md={4} sm={6} xs={12}>
+                      <ProductCard product={product} />
+                    </Col>
+                  ))}
+                </Row>
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </Container>
+      </section>
 
-        {/* 📩 Newsletter */}
-        <section className="newsletter">
-          <h3>Stay Updated</h3>
-          <p>Subscribe to our newsletter for exclusive deals and updates.</p>
-          <div className="newsletter-form">
-            <input type="email" placeholder="Enter your email" />
-            <button>Subscribe</button>
-          </div>
-        </section>
-      </div>
       <Footer />
     </>
   );
