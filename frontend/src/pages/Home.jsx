@@ -23,16 +23,19 @@ const Home = () => {
   }, []);
 
   return (
-    <><Navbar />
+    <>
+      <Navbar />
       <div className="home-container">
+        {/* 🔥 Hero Section */}
         <section className="hero">
           <div className="hero-overlay">
             <h1>Gear Up for Your Next Adventure</h1>
-            <p>Explore the best outdoor & sports gear at unbeatable prices.</p>
+            <p>Explore top-quality sports & outdoor gear at unbeatable prices.</p>
             <Link to="/shop" className="btn-primary">Shop Now</Link>
           </div>
         </section>
 
+        {/* 🏷️ Categories */}
         <section className="categories">
           <h2>Shop by Category</h2>
           <div className="category-grid">
@@ -43,6 +46,7 @@ const Home = () => {
           </div>
         </section>
 
+        {/* ⭐ Featured Products */}
         <section className="featured">
           <h2>Featured Products</h2>
           <div className="product-grid">
@@ -53,8 +57,19 @@ const Home = () => {
             )}
           </div>
         </section>
+
+        {/* 📩 Newsletter */}
+        <section className="newsletter">
+          <h3>Stay Updated</h3>
+          <p>Subscribe to our newsletter for exclusive deals and updates.</p>
+          <div className="newsletter-form">
+            <input type="email" placeholder="Enter your email" />
+            <button>Subscribe</button>
+          </div>
+        </section>
       </div>
-      <Footer /></>
+      <Footer />
+    </>
   );
 };
 

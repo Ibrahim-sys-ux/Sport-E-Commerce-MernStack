@@ -1,136 +1,147 @@
-/* Global Styling */
+/* 🌙 Dark Theme */
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Home Container */
-  .home-container {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  /* Hero Section */
-  .hero {
-    background: url("../img/hero-banner.webp") center/cover no-repeat;
-    color: white;
-    padding: 80px 20px;
-    border-radius: 10px;
-    position: relative;
-  }
-  
-  .hero-overlay {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 40px;
-    border-radius: 10px;
-  }
-  
-  .btn-primary {
-    background: #ff6600;
-    color: white;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 10px;
-    transition: background 0.3s;
-  }
-  
-  .btn-primary:hover {
-    background: #cc5500;
-  }
-  
-  /* Categories */
-  .categories {
-    margin: 40px 0;
-  }
-  
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #fff;
+}
+
+/* 🔥 Hero Section */
+.hero {
+  background: url("../img/hero-banner.webp") center/cover no-repeat;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+.btn-primary {
+  background: #ff6600;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background: #cc5500;
+  transform: scale(1.1);
+}
+
+/* 🏷️ Categories */
+.categories {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.category-card {
+  background: #222;
+  padding: 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.category-card:hover {
+  transform: scale(1.1);
+  background: #ff6600;
+  color: white;
+}
+
+/* ⭐ Featured Products */
+.featured {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* 📩 Newsletter Section */
+.newsletter {
+  background: #1a1a1a;
+  padding: 40px;
+  margin-top: 50px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.newsletter-form input {
+  padding: 12px;
+  width: 250px;
+  border-radius: 5px;
+  border: none;
+  background: #333;
+  color: white;
+}
+
+.newsletter-form button {
+  background: #ff6600;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+  background: #cc5500;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
   .category-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
+    flex-direction: column;
   }
-  
-  .category-card {
-    background: #eee;
-    padding: 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    transition: transform 0.3s, background 0.3s;
-  }
-  
-  .category-card:hover {
-    transform: scale(1.1);
-    background: #ff6600;
-    color: white;
-  }
-  
-  /* Featured Products */
-  .featured {
-    margin-top: 40px;
-  }
-  
+
   .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
-  
-  /* Newsletter Section */
-  .newsletter {
-    background: #f5f5f5;
-    padding: 30px;
-    margin-top: 40px;
-    border-radius: 10px;
-  }
-  
+
   .newsletter-form {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+    flex-direction: column;
   }
-  
+
   .newsletter-form input {
-    padding: 10px;
-    width: 250px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    width: 100%;
   }
-  
-  .newsletter-form button {
-    background: #ff6600;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .newsletter-form button:hover {
-    background: #cc5500;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .category-grid {
-      flex-direction: column;
-    }
-  
-    .product-grid {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-  
-    .newsletter-form {
-      flex-direction: column;
-    }
-  
-    .newsletter-form input {
-      width: 100%;
-    }
-  }
-  
+}
